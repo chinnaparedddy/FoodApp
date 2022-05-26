@@ -1,4 +1,4 @@
-package com.ty.food.dto;
+ package com.ty.food.dto;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

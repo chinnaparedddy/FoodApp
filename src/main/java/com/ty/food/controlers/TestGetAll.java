@@ -3,7 +3,7 @@ package com.ty.food.controlers;
 import java.util.List;
 
 import com.ty.food.dto.FoodOrder;
-import com.ty.food.dto.Items;
+import com.ty.food.dto.Item;
 import com.ty.food.servicers.FoodOrderService;
 
 public class TestGetAll {
@@ -20,8 +20,8 @@ public class TestGetAll {
 			System.out.println("Food Total :" + foodOrder.getTotal());
 			System.out.println("========================");
 
-			List<Items> items = foodOrder.getItems();
-			for (Items item : items) {
+			List<Item> items = foodOrder.getItems();
+			for (Item item : items) {
 				System.out.println("Item Id:" + item.getId());
 				System.out.println("Item name:" + item.getName());
 				System.out.println("Item Quantity:" + item.getQuntity());

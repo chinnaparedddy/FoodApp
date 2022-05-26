@@ -16,9 +16,10 @@ public class FoodOrder {
 	private String name;
 	private long phone;
 	private int total;
-	
+	private String status;
+
 	@OneToMany(mappedBy = "foodOrder")
-	private List<Items> items;
+	private List<Item> items;
 
 	public int getId() {
 		return id;
@@ -52,13 +53,20 @@ public class FoodOrder {
 		this.total = total;
 	}
 
-	public List<Items> getItems() {
+	public List<Item> getItems() {
 		return items;
 	}
 
-	public void setItems(List<Items> items) {
+	public void setItems(List<Item> items) {
 		this.items = items;
 	}
 
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 }

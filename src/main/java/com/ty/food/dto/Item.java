@@ -1,6 +1,8 @@
 package com.ty.food.dto;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -9,16 +11,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Items {
+public class Item {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	private String quntity;
+	private int quntity;
 	private double cost;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL ,fetch = FetchType.EAGER)
 	@JoinColumn
 	private FoodOrder foodOrder;
 
@@ -38,11 +40,11 @@ public class Items {
 		this.name = name;
 	}
 
-	public String getQuntity() {
+	public int getQuntity() {
 		return quntity;
 	}
 
-	public void setQuntity(String quntity) {
+	public void setQuntity(int quntity) {
 		this.quntity = quntity;
 	}
 
