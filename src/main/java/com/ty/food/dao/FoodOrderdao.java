@@ -74,11 +74,11 @@ public class FoodOrderdao {
 		query.setParameter(1, phone);
 		return query.getResultList();
 	}
-	public FoodOrder genrateBill(int id) {
-		FoodOrder foodOrder=entityManager.find(FoodOrder.class, id);
-		//List<Item> items=foodOrder.getItems();
-		return foodOrder;
-	}
+//	public FoodOrder genrateBill(int id) {
+//		FoodOrder foodOrder=entityManager.find(FoodOrder.class, id);
+//		//List<Item> items=foodOrder.getItems();
+//		return foodOrder;
+//	}
 	
 	
 }

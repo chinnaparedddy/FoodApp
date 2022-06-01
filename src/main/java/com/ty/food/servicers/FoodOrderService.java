@@ -36,17 +36,20 @@ public class FoodOrderService {
 	public List<FoodOrder> getByPhone(long phone){
 		return foodOrderdao.getByPhone(phone);
 	}
-	public double billGenerate(int id) {
+	public double billGenerate(double amount) {
 		//double total=0;
-		 FoodOrder foodOrder=foodOrderdao.genrateBill(id);
-		double amount= foodOrder.getTotal()+(foodOrder.getTotal()*cgst/100);
-		amount+=amount*sgst/100;
-		 return amount;
+		// FoodOrder foodOrder=foodOrderdao.genrateBill(id);
+	//	double amount= foodOrder.getTotal()+(foodOrder.getTotal()*cgst/100);
+		//amount+=amount*sgst/100;
+		// return amount;
+		amount=amount+(amount*cgst/100);
+		amount =amount +(amount*sgst/100);
+		return amount;
 	}
 	public double offerApplied(double amount) {
-		Menu menu=new Menu();
-		double offer=menu.getOffer();
-		double offeraplied=amount-(amount*offer/100);
-		return offeraplied;
+	Menu menu=new Menu();
+//		double offer=menu.getOffer();
+	return (amount-(amount*menu.getOffer()/100));
+		 
 	}
 }
